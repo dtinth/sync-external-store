@@ -10,7 +10,7 @@ export class SyncExternalStore<T> {
     getSnapshot: () => T;
     get state(): T;
     set state(value: T);
-    subscribe: (callback: (value: T) => void) => () => void;
+    subscribe: (onStoreChange: (value: T) => void) => () => void;
 }
 
 ```

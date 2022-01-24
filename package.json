@@ -25,7 +25,7 @@
     "prettier": "2.5.1",
     "@changesets/cli": "2.20.0"
   },
-  "description": "A simple SyncExternalStore for use with useSyncExternalStore",
+  "description": "A simple implementation of a SyncExternalStore for use with React’s useSyncExternalStore.",
   "version": "1.0.0-next.1",
   "dependencies": {},
   "repository": {
