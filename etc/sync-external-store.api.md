@@ -6,13 +6,11 @@
 
 // @public
 export class SyncExternalStore<T> {
-    constructor(_state: T);
+    constructor(initialState: T);
     getSnapshot: () => T;
     get state(): T;
     set state(value: T);
     subscribe: (callback: (value: T) => void) => () => void;
 }
-
-// (No @packageDocumentation comment for this package)
 
 ```

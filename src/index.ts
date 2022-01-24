@@ -1,4 +1,9 @@
 /**
+ * A simple implementation of SyncExternalStore for use with React’s `useSyncExternalStore`
+ * @packageDocumentation
+ */
+
+/**
  * A simple SyncExternalStore for use with React’s `useSyncExternalStore`
  * @public
  */
