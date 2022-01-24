@@ -1,0 +1,41 @@
+{
+  "name": "sync-external-store",
+  "scripts": {
+    "build": "heft build",
+    "test": "heft test",
+    "prepare": "heft build && ./scripts/generate-api-docs",
+    "release": "./scripts/release",
+    "format": "prettier --write .",
+    "api": "./scripts/generate-api-docs"
+  },
+  "files": [
+    "src",
+    "lib",
+    "lib-commonjs",
+    "dist"
+  ],
+  "main": "./lib-commonjs/index.js",
+  "module": "./lib/index.js",
+  "types": "./dist/sync-external-store.d.ts",
+  "docModel": "./dist/sync-external-store.api.json",
+  "devDependencies": {
+    "@rushstack/heft": "0.44.2",
+    "@rushstack/heft-web-rig": "0.7.2",
+    "@types/heft-jest": "1.0.2",
+    "prettier": "2.5.1",
+    "@changesets/cli": "2.20.0"
+  },
+  "description": "A simple SyncExternalStore for use with useSyncExternalStore",
+  "version": "0.0.0",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtinth/sync-external-store.git"
+  },
+  "author": "Thai Pangsakulyanont <dtinth@spacet.me>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtinth/sync-external-store/issues"
+  },
+  "homepage": "https://github.com/dtinth/sync-external-store#readme"
+}
