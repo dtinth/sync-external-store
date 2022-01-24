@@ -26,7 +26,7 @@
     "@changesets/cli": "2.20.0"
   },
   "description": "A simple implementation of a SyncExternalStore for use with React’s useSyncExternalStore.",
-  "version": "1.0.0-next.1",
+  "version": "1.0.0",
   "dependencies": {},
   "repository": {
     "type": "git",
