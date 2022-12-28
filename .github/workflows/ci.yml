@@ -1,4 +1,4 @@
-# This file is automatically managed by <https://github.com/dtinth/jslibdevkit>.
+# This file is automatically managed by <https://github.com/dtinth/repolicy>.
 # Any manual changes to this file may be overwritten.
 
 name: CI
@@ -15,20 +15,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Setup pnpm
-        uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2 # v2.0.1
-        with:
-          version: 6.26.0
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: pnpm
-      - name: Install dependencies and build
-        run: pnpm install --prefer-offline
+      - name: Setup
+        uses: ./.github/actions/setup
       - name: Test
         run: pnpm run test
       - name: SonarCloud Scan
@@ -42,20 +33,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Setup pnpm
-        uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2 # v2.0.1
-        with:
-          version: 6.26.0
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          cache: pnpm
-      - name: Install dependencies and build
-        run: pnpm install --prefer-offline
+      - name: Setup
+        uses: ./.github/actions/setup
       - name: Lint
         run: pnpm run format
       - name: Lint
