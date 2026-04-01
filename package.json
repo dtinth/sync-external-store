@@ -1,6 +1,6 @@
 {
   "name": "sync-external-store",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A simple implementation of a SyncExternalStore for use with React’s useSyncExternalStore.",
   "homepage": "https://github.com/dtinth/sync-external-store#readme",
   "bugs": {
