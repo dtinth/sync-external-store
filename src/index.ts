@@ -23,30 +23,30 @@
  * @public
  */
 export class SyncExternalStore<T> {
-  private _state: T
-  private _subscribers: Set<(value: T) => void> = new Set()
+  private _state: T;
+  private _subscribers: Set<(value: T) => void> = new Set();
 
   /**
    * The `subscribe` function to pass as the 1st argument to `useSyncExternalStore`.
    */
-  public subscribe: (onStoreChange: (value: T) => void) => () => void
+  public subscribe: (onStoreChange: (value: T) => void) => () => void;
 
   /**
    * The `getSnapshot` function to pass as the 2nd argument to `useSyncExternalStore`.
    */
-  public getSnapshot: () => T
+  public getSnapshot: () => T;
 
   /**
    * Creates a new SyncExternalStore.
    * @param _state - The initial state of the store
    */
   public constructor(initialState: T) {
-    this._state = initialState
+    this._state = initialState;
     this.subscribe = (onStoreChange) => {
-      this._subscribers.add(onStoreChange)
-      return () => this._subscribers.delete(onStoreChange)
-    }
-    this.getSnapshot = () => this._state
+      this._subscribers.add(onStoreChange);
+      return () => this._subscribers.delete(onStoreChange);
+    };
+    this.getSnapshot = () => this._state;
   }
 
   /**
@@ -56,12 +56,12 @@ export class SyncExternalStore<T> {
    * Assigning the same value will not cause any subscribers to be notified.
    */
   public get state(): T {
-    return this._state
+    return this._state;
   }
   public set state(value: T) {
     if (value !== this._state) {
-      this._state = value
-      this._subscribers.forEach((subscriber) => subscriber(value))
+      this._state = value;
+      this._subscribers.forEach((subscriber) => subscriber(value));
     }
   }
 }

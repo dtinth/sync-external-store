@@ -1,41 +1,44 @@
 {
   "name": "sync-external-store",
-  "scripts": {
-    "build": "heft build",
-    "test": "heft test",
-    "prepare": "heft build && ./scripts/generate-api-docs",
-    "release": "./scripts/release",
-    "format": "prettier --write .",
-    "api": "./scripts/generate-api-docs"
-  },
-  "files": [
-    "src",
-    "lib",
-    "lib-commonjs",
-    "dist"
-  ],
-  "main": "./lib-commonjs/index.js",
-  "module": "./lib/index.js",
-  "types": "./dist/sync-external-store.d.ts",
-  "docModel": "./dist/sync-external-store.api.json",
-  "devDependencies": {
-    "@rushstack/heft": "0.48.7",
-    "@rushstack/heft-web-rig": "0.12.10",
-    "@types/heft-jest": "1.0.3",
-    "prettier": "2.7.1",
-    "@changesets/cli": "2.25.0"
-  },
-  "description": "A simple implementation of a SyncExternalStore for use with React’s useSyncExternalStore.",
   "version": "1.0.0",
-  "dependencies": {},
+  "description": "A simple implementation of a SyncExternalStore for use with React’s useSyncExternalStore.",
+  "homepage": "https://github.com/dtinth/sync-external-store#readme",
+  "bugs": {
+    "url": "https://github.com/dtinth/sync-external-store/issues"
+  },
+  "license": "ISC",
+  "author": "Thai Pangsakulyanont <dtinth@spacet.me>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dtinth/sync-external-store.git"
   },
-  "author": "Thai Pangsakulyanont <dtinth@spacet.me>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dtinth/sync-external-store/issues"
+  "files": [
+    "src",
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "vp pack",
+    "test": "vp test",
+    "prepare": "vp config",
+    "release": "./scripts/release",
+    "format": "prettier --write .",
+    "api": "./scripts/generate-api-docs",
+    "dev": "vp pack --watch",
+    "check": "vp check",
+    "prepublishOnly": "vp run build"
   },
-  "homepage": "https://github.com/dtinth/sync-external-store#readme"
+  "dependencies": {},
+  "devDependencies": {
+    "@changesets/cli": "^2.30.0",
+    "@typescript/native-preview": "7.0.0-dev.20260328.1",
+    "vite-plus": "^0.1.14"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
+  }
 }
