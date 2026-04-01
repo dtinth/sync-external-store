@@ -1,5 +1,11 @@
 # sync-external-store
 
+## 2.0.0
+
+### Major Changes
+
+- 2192984: This package is now ESM-only
+
 ## 1.0.0
 
 ### Major Changes
